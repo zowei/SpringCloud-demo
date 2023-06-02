@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+  <h1>welcome to bjut edu.</h1>
+
+  <h2>1.测试REST风格</h2>
+
+    <form action="/user" method="get">
+        <input value="REST-GET submit" type="submit">
+    </form>
+
+    <form action="/user" method="post">
+      <input value="REST-POST submit" type="submit">
+    </form>
+
+    <form action="/user" method="post">
+        <!--使用隐藏域传递真正的请求方式：method="post", name="_method", value="PUT"-->
+        <input name="_method" value="put" type="hidden">
+        <input value="REST-PUT submit" type="submit">
+    </form>
+
+    <form action="/user" method="post">
+        <!--使用隐藏域传递真正的请求方式：method="post", name="_method", value="DELETE"-->
+        <input name="_method" value="DELETE" type="hidden">
+        <input value="REST-DELETE submit" type="submit">
+    </form>
+
+
+<h2>2.测试基本注解</h2>
+<ul>
+
+    <li>@PathVariable (路径变量):
+        <a href="car/3/owner/lisi">car/{id}/owner/{username}</a>
+    </li>
+    <li>@RequestHeader (获取请求头):
+        <a href="car/RequestHeader/6/王五">/car/RequestHeader/{id}/{username}</a>
+    </li>
+    <li>@RequestParam (获取请求参数):
+        <a href="car/RequestParam/?id=3&age=18&inters=basketball&inters=game">/car/RequestParam/{id}/{username}</a>
+    </li>
+    <li>@CookieValue (获取cookie值):
+        <a href="car/CookieValue/6/王五">/car/CookieValue/{id}/{username}</a>
+    </li>
+    <li>@RequestAttribute (获取 request 域属性):
+        <a href="car/RequestAttribute/6/王五">/car/RequestAttribute/{id}/{username}</a>
+    </li>
+    <li>@RequestBody (获取请求体):
+<!--        <a href="car/RequestBody/6/王五">/car/RequestBody/{id}/{username}</a>-->
+        <form action="/car/RequestBody/save" method="post">
+            <h3>@RequestBody post请求</h3><br/>
+            用户名：<input name="name"><br/>
+            重    量：<input name="weight"><br/>
+            <input value="提交" type="submit">
+
+        </form>
+    </li>
+    <li>@MatrixVariable (矩阵变量):<br/>
+        <a href="cars/MatrixVariable/sell;age=32;brand=byd,yd,audi">/car/MatrixVariable/{id}/{username}</a><br/>
+        <a href="boss/1;age=29/2;age=59">/car/MatrixVariable/{id}/{username}</a>
+    </li>
+
+</ul>
+
+    <h2>测试复杂类型自定义参数</h2>
+    <a href="/customParam.html">点击此处超链接进行页面跳转</a>
+
+
+
+  <h2>测试文件上传</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+      nickname: <input name="name" type="text"><br/>
+      文件上传: <input name="file" type="file"><br/>
+      提交: <input value="提交" type="submit"><br/>
+  </form>
+
+  <h2>测试拦截器</h2>
+  <a href="/user/123456">点击此处超链接进行拦截器测试</a>
+
+
+</body>
+</html>
