@@ -1,5 +1,5 @@
 # SpringCloud-demo
-###技术栈
+技术栈
 
 1. 注册中心使用 eureka
 2. 网关使用 springcloud-gateway
@@ -19,4 +19,5 @@
 ![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/27f82134-bc94-4668-90bc-dd3448ffe11a)
 4. 通过网关访问 order-service，订单服务使用 feign 远程调用user-service 得到该订单关联的用户：http://localhost:10010/order/4?auth=admin
 ![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/71df2999-db1b-4a6a-8561-f7ac96d145bc)
+
 注意: 在网关中配置了全局路由过滤器，要求在请求头中加上"?auth=admin",才能通过路由
