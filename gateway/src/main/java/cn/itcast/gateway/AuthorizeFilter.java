@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 
 // 全局路由过滤器
 //@Order(-1)  // 定义过滤器执行顺序
-// @Component
+@Component
 public class AuthorizeFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
