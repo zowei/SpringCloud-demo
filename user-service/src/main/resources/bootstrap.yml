@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+# bootstrap.yml: 优先级比application.yml 要高
+# 取 nacos 配置管理拉取配置
+#spring:
+#  application:
+#    name: user-service
+#  # 环境
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      # nacos 地址
+#      server-addr: localhost:8848
+#      # 指定集群地址
+#      discovery:
+#        cluster-name:HZ
+#      config:
+#        file-extension: yaml # 文件后缀名
