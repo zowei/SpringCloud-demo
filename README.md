@@ -20,15 +20,14 @@
 
 2. 将注册中心eureka先启动，然后启动其余的微服务，访问 http://localhost:10086/
 
-![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/3ba84379-d393-4c9e-b710-06d033c36b10)
+![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/3fe51582-c5b6-4826-8407-c3cb89d228e5)
 
 观察所有服务是否都已经注册到 eureka
-3. 通过网关访问 user-service：http://localhost:10010/user/3?auth=admin
 
-![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/27f82134-bc94-4668-90bc-dd3448ffe11a)
+3. 通过网关访问 user-service：http://localhost:10010/user/3?auth=admin
+![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/9ac355c4-d05d-4b44-98db-a878c4ba19d4)
 
 4. 通过网关访问 order-service，订单服务使用 feign 远程调用user-service 得到该订单关联的用户：http://localhost:10010/order/4?auth=admin
-
-![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/71df2999-db1b-4a6a-8561-f7ac96d145bc)
+![image](https://github.com/zowei/SpringCloud-demo/assets/36793718/48ae4c91-9e05-4ca4-81e3-053bebad8d5c)
 
 注意: 在网关中配置了全局路由过滤器，要求在请求头中加上"?auth=admin",才能通过路由
